@@ -1,5 +1,7 @@
 .DS_Store
-**/bin/
-**/obj/
+**/bin
+**/obj
 **/node_modules
 **/build
+**/Logs
+**/APILogs
