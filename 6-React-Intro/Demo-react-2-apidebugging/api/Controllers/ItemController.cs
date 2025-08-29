@@ -9,12 +9,12 @@ namespace MyShop.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ItemAPIController : Controller
+public class ItemAPIController : ControllerBase  // ControllerBase is sufficient for API controllers, avoiding View-related features
 {
     private readonly IItemRepository _itemRepository;
-    private readonly ILogger<ItemController> _logger;
+    private readonly ILogger<ItemAPIController> _logger;
 
-    public ItemAPIController(IItemRepository itemRepository, ILogger<ItemController> logger)
+    public ItemAPIController(IItemRepository itemRepository, ILogger<ItemAPIController> logger)
     {
         _itemRepository = itemRepository;
         _logger = logger;

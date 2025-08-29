@@ -15,7 +15,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ItemDbContext>(options => {
     options.UseSqlite(builder.Configuration["ConnectionStrings:ItemDbContextConnection"]);});
 
-builder.Services.AddControllers();
 builder.Services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy",
@@ -45,6 +44,6 @@ if (app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors("CorsPolicy");
-app.MapControllerRoute(name: "api", pattern: "{controller}/{action=Index}/{id?}");
+app.MapControllers();
     
 app.Run();

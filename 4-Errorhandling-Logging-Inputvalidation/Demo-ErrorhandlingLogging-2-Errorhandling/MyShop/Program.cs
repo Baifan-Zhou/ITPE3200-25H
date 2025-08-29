@@ -15,7 +15,7 @@ builder.Services.AddDbContext<ItemDbContext>(options => {
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
 
 var loggerConfiguration = new LoggerConfiguration()
-    .MinimumLevel.Information() // levels: Trace< Information < Warning < Erorr < Fatal
+    .MinimumLevel.Warning() // levels: Trace< Information < Warning < Erorr < Fatal
     .WriteTo.File($"Logs/app_{DateTime.Now:yyyyMMdd_HHmmss}.log");
 
 loggerConfiguration.Filter.ByExcluding(e => e.Properties.TryGetValue("SourceContext", out var value) &&
